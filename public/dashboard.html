@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body { font-family: Arial; background:#f4f4f4; margin:0; }
+    .top { background:#0b1e3c; color:white; padding:15px; font-size:18px; }
+    .card { background:white; padding:20px; margin:20px; border-radius:10px; }
+    button { padding:12px; width:100%; background:#0b1e3c; color:white; border:none; border-radius:5px; }
+  </style>
+</head>
+<body>
+
+<div class="top">
+  Welcome, <span id="name"></span>
+</div>
+
+<div class="card">
+  <h2>Balance: $<span id="bal">10000</span></h2>
+  <button onclick="goWithdraw()">Withdraw</button>
+</div>
+
+<div class="card">
+  <h3>Transaction History</h3>
+  <p>No transactions yet</p>
+</div>
+
+<script>
+document.getElementById("name").innerText = localStorage.getItem("user") || "User";
+
+function goWithdraw(){
+  window.location = "withdraw.html";
+}
+</script>
+
+</body>
+</html>
